@@ -2,7 +2,8 @@
 ## A brief about the project:
 **Project of `dockerization` a python application and `deploy` it into a `private cluster` "The Project include the setup and creation of the `infrastructure` till running the application in the cluster through a private VM"**
 
-### ________________________________________________________________________________________________________________________________________
+###                ______________________________________________________________________________________________
+
 
 > ## Follow the next steps to run this project:
 
@@ -37,10 +38,14 @@ https://github.com/git-guides/install-git
 ```
 git clone git@github.com:HusseinGhoarba/GCP-Project.git
 ```
-> 2- Open file `terraform-files` and edit on files `terraform.tfvars` values of 
-	2-1- `user-project-id` --> add  `<your-project-id>` 
+> 2- Open file `terraform-files` and edit on files `terraform.tfvars` values of : 
+	
+	2-1- `user-project-id` --> add  `<your-project-id>`
+	
 	2-2- `user-region`     --> add  `<your-prefered-region>`
+	
 	2-3- `user-zone`       --> add  `<your-prefered-zone>`
+	
      Open file `user-data.sh` and edit the value of the zone inside the line `no.25` with your `<your-prefered-zone>`
 
 > 3- run the following commands as follows:
@@ -48,21 +53,25 @@ git clone git@github.com:HusseinGhoarba/GCP-Project.git
 terraform init
 ```
 **screenshot from the command:**
-<img src="images/terraform/01-init.png" width=200 >
+
+
+<img src="images/terraform/01-init.png" width=400 >
 
 ```
 terraform plan
 ```
 **screenshot from the command:**
-<img src="images/terraform/02-terraform plan.png" width=200 >
+
+<img src="images/terraform/02-terraform plan.png" width=400 >
 
 ```
 terraform apply
 ```
 **screenshot from the command:**
-<img src="images/terraform/03-apply.png" width=200 >
 
-<img src="images/terraform/04-yes-for-applying.png" width=200 >
+<img src="images/terraform/03-apply.png" width=400 >
+
+<img src="images/terraform/04-yes-for-applying.png" width=400 >
 
 
 ### --------------------------------------------------
@@ -70,3 +79,4 @@ terraform apply
 |![Hussein Ghoraba](images/hussein.jpg)|
 |:-----------------:|
 |[Hussein Ghoraba](https://github.com/HusseinGhoarba)|
+
