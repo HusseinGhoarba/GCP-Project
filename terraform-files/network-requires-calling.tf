@@ -18,7 +18,7 @@ module "management-subnet" {
   source = "./subnets"
   subnet-name = "management-subnet"
   cidr-ip = "10.0.1.0/24"
-  region-of-subnet = "us-east1"
+  region-of-subnet = var.user-region
   vpc-link = module.my-vpc.vpc-link
 }
 
@@ -26,7 +26,7 @@ module "restricted-subnet" {
   source = "./subnets"
   subnet-name = "restricted-subnet"
   cidr-ip = "10.0.2.0/24"
-  region-of-subnet = "us-east1"
+  region-of-subnet = var.user-region
   vpc-link = module.my-vpc.vpc-link
 }
 #-----------------------------------------------------------------

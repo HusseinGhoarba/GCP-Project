@@ -13,8 +13,6 @@ resource "google_compute_instance" "private-vm" {
   enable-oslogin = "TRUE"
   }
 
-  tags = var.tags-of-vm
-
   network_interface {
     subnetwork = var.id-subnet-of-vm
   }

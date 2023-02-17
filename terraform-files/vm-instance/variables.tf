@@ -14,10 +14,6 @@ variable "image-of-vm" {
   
 }
 
-variable "tags-of-vm" {
-  
-}
-
 variable "id-subnet-of-vm" {
   
 }
