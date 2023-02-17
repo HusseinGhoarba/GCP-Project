@@ -19,15 +19,19 @@ https://cloud.google.com/resource-manager/docs/creating-managing-projects
 ```
 https://cloud.google.com/sdk/docs/install
 ```
-> 3- Docker on your local machine and configured with cloud SDK 
+> 3- Install Docker in your local machine
+```
+https://docs.docker.com/engine/install
+```
+> 5- Configure Docker on your local machine with cloud SDK 
 ```
 https://cloud.google.com/container-registry/docs/advanced-authentication
 ```
-> 4- Terraform setup on you local machine
+> 6- Terraform setup on you local machine
 ```
 https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli 
 ```
-> 5- install git on your local machine
+> 7- install git on your local machine
 ```
 https://github.com/git-guides/install-git
 ```
@@ -52,27 +56,45 @@ git clone git@github.com:HusseinGhoarba/GCP-Project.git
 ```
 terraform init
 ```
-**screenshot from the command:**
-
+screenshot from the command:
 
 <img src="images/terraform/01-init.png" width=400 >
 
 ```
 terraform plan
 ```
-**screenshot from the command:**
+screenshot from the command:
 
 <img src="images/terraform/02-terraform plan.png" width=400 >
 
 ```
 terraform apply
 ```
-**screenshot from the command:**
+screenshot from the command:
 
 <img src="images/terraform/03-apply.png" width=400 >
 
 <img src="images/terraform/04-yes-for-applying.png" width=400 >
 
+
+### --------------------------------------------------
+## 2/Building Docker-Image and Push it:
+
+> 1- change your directory to the app-python and run the following command in your terminal after changing `<your-project-id>` with yours:
+```
+docker build . -t gcr.io/<your-project-id>/my-python-app
+```
+screenshot from the command:
+
+<img src="images/docker/01-docker-build.png" width=400 >
+
+> 2- Push the created image by the following command to your container registry of your google cloud project after changing `<your-project-id>` with yours:
+```
+docker push gcr.io/<your-project-id>/my-python-app:latest
+```
+screenshot from the command:
+
+<img src="images/docker/02-docker-push.png" width=400 >
 
 ### --------------------------------------------------
 ### Project Contributers:
