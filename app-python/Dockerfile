@@ -1,18 +1,21 @@
-FROM python:3.7
+FROM python:3.8
 
-COPY . /usr/app
+RUN mkdir /app
+WORKDIR /app
 
-WORKDIR /usr/app
+COPY requirements.txt requirements.txt
+
+COPY . .
+
+ENV ENVIRONMENT=DEV
+ENV HOST=localhost
+ENV PORT=8080
+ENV REDIS_HOST=localhost
+ENV REDIS_PORT=6379
+ENV REDIS_DB=0
+
+EXPOSE 8080
 
 RUN pip install -r requirements.txt
 
-ENV ENVIRONMENT=DevOps
-ENV HOST=localhost
-ENV PORT=8000
-ENV REDIS_HOST=localhost
-ENV REDIS_PORT=6379s
-ENV REDIS_DB=0
-
-EXPOSE 8000
-
-CMD ["python3", "hello.py"]
+CMD ["python", "hello.py"]

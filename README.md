@@ -1,4 +1,4 @@
-# GCP-Project
+# $${\color{blue}GCP-Project}$$	
 ## A brief about the project:
 **Project of `dockerization` a python application and `deploy` it into a `private cluster` "The Project include the setup and creation of the `infrastructure` till running the application in the cluster through a private VM"**
 
@@ -36,7 +36,7 @@ https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
 https://github.com/git-guides/install-git
 ```
 ### --------------------------------------------------
-## 1/Creating the infrastructure of the project on GCP:
+### 1- Creating the infrastructure of the project on GCP:
 
 > 1- In a new directory use the next command in the bash shell to download the files from this repo
 ```
@@ -78,7 +78,7 @@ screenshot from the command:
 
 
 ### --------------------------------------------------
-## 2/Building Docker-Image and Push it:
+### 2- Building Docker-Image and Push it:
 
 > 1- change your directory to the app-python and run the following command in your terminal after changing `<your-project-id>` with yours:
 ```
@@ -96,6 +96,73 @@ screenshot from the command:
 
 <img src="images/docker/02-docker-push.png" width=400 >
 
+### --------------------------------------------------
+### 3- Deploy the image into the cluster using the private vm:
+**"General Hint: make sure to replace the `<your-project-id>` with yours and replace the `<your-preferred-zone>` with yours"**
+> 1- Connect to the private-instance which is in the management-subent: 
+```
+gcloud compute ssh --project=<your-project-id>  --zone=<your-added-preferred-zone> instance-management
+```
+screenshot from the command:
+
+<img src="images/deployment/01-ssh-to-private-vm.png" width=400 >
+
+> 2- Download the files of the repo. using git:
+```
+git clone https://github.com/HusseinGhoarba/GCP-Project.git
+```
+screenshot from the command:
+
+<img src="images/deployment/02-git-clone-of-the-files.png" width=400 >
+
+> 3- connect to the cluster:
+```
+gcloud container clusters get-credentials python-cluster --zone <your-added-preferred-zone> --project <your-project-id>
+```
+screenshot from the command:
+
+<img src="images/deployment/03-configure-the-cluster.png" width=400 >
+
+> 4- change your current directory to GCP-Project:
+```
+cd GCP-Project/
+```
+> 5- deploy the resources into the python-cluster:
+```
+kubectl apply -f deployment/
+```
+screenshot from the command:
+
+<img src="images/deployment/04-create-deployment.png" width=400 >
+
+> 6- make sure that all pods are running and get services:
+```
+kubectl get po
+```
+screenshot from the command:
+
+<img src="images/deployment/05-get-pods.png" width=400 >
+
+```
+kubectl get svc
+```
+screenshot from the command:
+
+<img src="images/deployment/06-get-svc.png" width=400 >
+
+> 7- from the previous step get the external of the IP as the next photo and the port and go to any web-browser and write `<external-ip>:<port>`:
+screenshot from the command:
+
+<img src="images/deployment/07-get-the-ip-of-load-balancer.png" width=400 >
+
+> 8- press on reload and check the counter 
+
+<img src="images/deployment/08- add-ip-to-web-browser-and-reload.png" width=400 >
+
+<img src="images/deployment/09- reload-to-check.png" width=400 >
+
+### --------------------------------------------------
+### $${\color{green}Finally: I want to THANK YOU & If there is any problem don't hesitate to send to me}$$	
 ### --------------------------------------------------
 ### Project Contributers:
 |![Hussein Ghoraba](images/hussein.jpg)|
