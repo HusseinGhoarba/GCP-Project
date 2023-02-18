@@ -162,7 +162,8 @@ screenshot from the command:
 <img src="images/deployment/09- reload-to-check.png" width=400 >
 
 ### --------------------------------------------------
-### $${\color{green}Finally: I want to THANK YOU & If there is any problem don't hesitate to send to me}$$	
+### Finally: 
+***I want to THANK YOU & If there is any problem don't hesitate to send to me***
 ### --------------------------------------------------
 ### Project Contributers:
 |![Hussein Ghoraba](images/hussein.jpg)|
