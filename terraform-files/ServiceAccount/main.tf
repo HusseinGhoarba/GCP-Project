@@ -6,6 +6,6 @@ resource "google_service_account" "default-SA" {
 
 resource "google_project_iam_member" "iam-roles" {
   project = var.project-id
-  role    = "roles/container.admin"
+  role    = var.roles
   member  = "serviceAccount:${google_service_account.default-SA.email}"
 }
